@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class Ragdoll : MonoBehaviour
 {
     public bool beenHit;
+    public bool frozen;
 
     public Rigidbody[] rbs;
     // Start is called before the first frame update
@@ -26,6 +28,7 @@ public class Ragdoll : MonoBehaviour
             rb.AddForce(Vector3.back, ForceMode.Impulse);
         }
     }
+
 
     // Update is called once per frame
 }
