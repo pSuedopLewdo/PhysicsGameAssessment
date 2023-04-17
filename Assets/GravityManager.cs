@@ -7,11 +7,15 @@ using UnityEngine.UI;
 public class GravityManager : MonoBehaviour
 {
     public GameObject player;
+    public CharacterController cc;
+    public Vector3 moveDir;
     public bool flipped;
     public Image image;
     
     private void Awake()
     {
+        player = GameObject.FindWithTag("Player");
+        cc = player.GetComponent<CharacterController>();
         flipped = false;
         Physics.gravity = new Vector3(0, -9.81f, 0);
     }
@@ -30,5 +34,7 @@ public class GravityManager : MonoBehaviour
             Physics.gravity = new Vector3(0, -9.81f, 0);
             image.color = Color.blue;
         }
+
+        //cc.Move(moveDir);
     }
 }
